@@ -2,28 +2,25 @@
 
 int main()
 {
-    int n, pos, x;
+    int n, pos;
     scanf("%d", &n);
 
-    int arr[n + 1];
+    int arr[n];
     for (int i = 0; i < n; i++)
     {
         scanf("%d", &arr[i]);
     }
 
     scanf("%d", &pos);
-    scanf("%d", &x);
 
-    for (int i = n; i >= pos; i--)
+    for (int i = pos - 1; i < n - 1; i++)
     {
-        arr[i] = arr[i - 1];
+        arr[i] = arr[i + 1];
     }
 
-    arr[pos - 1] = x;
-
-    for (int i = 0; i <= n; i++)
+    for (int i = 0; i < n - 1; i++)
     {
-        printf("%d%s", arr[i], (i == n) ? "" : " ");
+        printf("%d%s", arr[i], (i == n - 2) ? "" : " ");
     }
 
     return 0;
